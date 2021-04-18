@@ -7,6 +7,16 @@
   width: 80%;
 }
 
+.mat-form-field form {
+  margin: 5px 0;
+  width: 25%;
+}
+
+.mat-form-field-20 {
+  margin-top:8px;
+  width: 20%;
+}
+
 .example-form {
   min-width: 150px;
   max-width: 500px;

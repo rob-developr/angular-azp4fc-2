@@ -20,7 +20,7 @@ Select a title to set on the current HTML document:
 <mat-progress-bar mode="determinate" value="0"></mat-progress-bar>
 
 <mat-horizontal-stepper labelPosition="bottom" [linear]="isLinear" #stepper>
-    <ng-template matStepperIcon="edit">
+  <ng-template matStepperIcon="edit">
     <mat-icon>check</mat-icon>
   </ng-template>
 
@@ -96,13 +96,10 @@ Select a title to set on the current HTML document:
     <form [formGroup]="testInfoFormGroup">
       <ng-template matStepLabel>Analysis<br>Information</ng-template>
       <mat-label>Testing Performed:</mat-label>
-    <mat-checkbox class="example-margin"
-                  [checked]="allComplete"
-                  [color]="task.color"
-                  [indeterminate]="someComplete()"
-                  (change)="setAll($event.checked)">
-      {{task.name}}
-    </mat-checkbox>
+      <mat-checkbox class="example-margin" [checked]="allComplete" [color]="task.color" [indeterminate]="someComplete()"
+        (change)="setAll($event.checked)">
+        {{task.name}}
+      </mat-checkbox>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
@@ -125,7 +122,31 @@ Select a title to set on the current HTML document:
   <mat-step [stepControl]="stabilityInfoFormGroup">
     <form [formGroup]="stabilityInfoFormGroup">
       <ng-template matStepLabel>Sample Stability<br>Information</ng-template>
-
+      <mat-form-field appearance="standard">
+        <mat-label>Select Submission Condition</mat-label>
+        <mat-select>
+          <mat-option value="Ambient">Ambient (RT)</mat-option>
+          <mat-option value="Refrigerated">Refrigerated (4°C)</mat-option>
+          <mat-option value="Frozen -20">Frozen (-20°C)</mat-option>
+          <mat-option value="Frozen -70/-80">Frozen (-70/-80°C)</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label></mat-label>
+        <input matInput placeholder="Numeric Value">
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Select Time Period</mat-label>
+        <mat-select>
+          <mat-option value="hours">Hours</mat-option>
+          <mat-option value="days">Days</mat-option>
+          <mat-option value="months">Months</mat-option>
+          <mat-option value="years">Years</mat-option>
+          <mat-option value="indefinite">Indefinte</mat-option>
+          <mat-option value="unknown">Unknown</mat-option>
+        </mat-select>
+        <mat-hint align="end">Select Period of Stability</mat-hint>
+      </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
