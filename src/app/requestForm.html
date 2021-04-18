@@ -217,12 +217,12 @@ Select a title to set on the current HTML document:
   <mat-step [stepControl]="submitFormGroup">
     <form [formGroup]="submitFormGroup">
       <ng-template matStepLabel>Save or Submit</ng-template>
-      <mat-slide-toggle required>Accept Terms of Service</mat-slide-toggle>
+      <mat-slide-toggle isChecked = "false" required [(ngModel)]="acceptTCs">Accept Terms of Service</mat-slide-toggle>
       <br>
       <br>
       <div>
         <button mat-raised-button color="secondary" matStepperPrevious>Back</button>&nbsp;
-        <button mat-raised-button color="primary" type="submit" [disabled]="this.invalid" (click)="stepper.Submit()">Submit</button>
+        <button mat-raised-button color="primary" type="submit" (click)="stepper.Submit()" disabled>Submit</button>
       </div>
     </form>
   </mat-step>
