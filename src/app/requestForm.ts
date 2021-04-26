@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, FormArray, FormControl, Validators} from '@angular/forms';
 import {ThemePalette} from '@angular/material/core';
 
 export interface Task {
@@ -32,7 +32,16 @@ export class requestForm implements OnInit {
   reviewFormGroup: FormGroup;
   submitFormGroup: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder) {
+    /**
+    this.stabilityInfoFormGroup = this._formBuilder.group({
+      
+       conditions: this._formBuilder.array([]),
+       stabilityCondition: '',
+        
+    });
+    */
+  }
 
 task: Task = {
     name: 'Indeterminate',
@@ -66,7 +75,19 @@ task: Task = {
       fourthCtrl: ['', Validators.required]
     });
     this.stabilityInfoFormGroup = this._formBuilder.group({
-      fifthCtrl: ['', Validators.required]
+      numberOfConditions: ['', Validators.required],
+      conditions: new FormArray([]),
+      stabilityCondition2: ['Test', Validators.required],
+      stabilityValue: ['', Validators.required],
+      stabilityPeriod: ['', Validators.required],
+      /**
+      conditions: this._formBuilder.array([]),
+      stabilityCondition: this._formBuilder.array([]),
+
+      stabilityCondition: ['', Validators.required],
+      stabilityValue: ['', Validators.required],
+      stabilityPeriod: ['', Validators.required],
+      */
     });
     this.reportInfoFormGroup = this._formBuilder.group({
       sixthCtrl: ['', Validators.required]
@@ -83,10 +104,9 @@ task: Task = {
     this.submitFormGroup = this._formBuilder.group({
       tenthCtrl: ['', Validators.required]
     });
-
   }
 
-    updateAllComplete() {
+  updateAllComplete() {
     this.allComplete = this.task.subtasks != null && this.task.subtasks.every(t => t.completed);
   }
 
@@ -105,6 +125,48 @@ task: Task = {
     this.task.subtasks.forEach(t => t.completed = completed);
   }
 
+  get f() { return this.stabilityInfoFormGroup.controls; }
+  get t() { return this.f.conditions as FormArray; }
+  get stabilityInfoFormGroups() { return this.t.controls as FormGroup[]; }
+
+    onAddCondition() {
+        this.t.push(this._formBuilder.group({
+        numberOfConditions: ['', Validators.required],
+        stabilityCondition: ['', Validators.required],
+        stabilityValue: [],
+        stabilityPeriod: [],
+        }));
+        /**
+        const numberOfConditions = 1
+        if (this.t.length < numberOfConditions) {
+            for (let i = this.t.length; i < numberOfConditions; i++) {
+                this.t.push(this._formBuilder.group({
+                    stabilityCondition: ['', Validators.required],
+                }));
+            }
+        } else {
+            for (let i = this.t.length; i >= numberOfConditions; i--) {
+                this.t.removeAt(i);
+            }
+        }
+        */
+    }
+
+/**
+  conditions() : FormArray {
+  return this.stabilityInfoFormGroup.get("conditions") as FormArray
+  }
+
+  newCondition(): FormGroup {
+  return this._formBuilder.group({
+    conditions: ''
+  })
+  }
+  
+  addCondition() {
+  this.conditions().push(this.newCondition());
+  }
+*/
 
 }
 
