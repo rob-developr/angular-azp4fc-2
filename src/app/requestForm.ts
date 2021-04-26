@@ -75,19 +75,11 @@ task: Task = {
       fourthCtrl: ['', Validators.required]
     });
     this.stabilityInfoFormGroup = this._formBuilder.group({
-      numberOfConditions: ['', Validators.required],
+        numberOfConditions: ['', Validators.required],
+        stabilityCondition: ['', Validators.required],
+        stabilityValue: ['', Validators.required],
+        stabilityPeriod: ['', Validators.required],
       conditions: new FormArray([]),
-      stabilityCondition2: ['Test', Validators.required],
-      stabilityValue: ['', Validators.required],
-      stabilityPeriod: ['', Validators.required],
-      /**
-      conditions: this._formBuilder.array([]),
-      stabilityCondition: this._formBuilder.array([]),
-
-      stabilityCondition: ['', Validators.required],
-      stabilityValue: ['', Validators.required],
-      stabilityPeriod: ['', Validators.required],
-      */
     });
     this.reportInfoFormGroup = this._formBuilder.group({
       sixthCtrl: ['', Validators.required]
@@ -104,6 +96,7 @@ task: Task = {
     this.submitFormGroup = this._formBuilder.group({
       tenthCtrl: ['', Validators.required]
     });
+
   }
 
   updateAllComplete() {
@@ -133,40 +126,10 @@ task: Task = {
         this.t.push(this._formBuilder.group({
         numberOfConditions: ['', Validators.required],
         stabilityCondition: ['', Validators.required],
-        stabilityValue: [],
-        stabilityPeriod: [],
+        stabilityValue: ['', Validators.required],
+        stabilityPeriod: ['', Validators.required],
         }));
-        /**
-        const numberOfConditions = 1
-        if (this.t.length < numberOfConditions) {
-            for (let i = this.t.length; i < numberOfConditions; i++) {
-                this.t.push(this._formBuilder.group({
-                    stabilityCondition: ['', Validators.required],
-                }));
-            }
-        } else {
-            for (let i = this.t.length; i >= numberOfConditions; i--) {
-                this.t.removeAt(i);
-            }
-        }
-        */
     }
-
-/**
-  conditions() : FormArray {
-  return this.stabilityInfoFormGroup.get("conditions") as FormArray
-  }
-
-  newCondition(): FormGroup {
-  return this._formBuilder.group({
-    conditions: ''
-  })
-  }
-  
-  addCondition() {
-  this.conditions().push(this.newCondition());
-  }
-*/
 
 }
 

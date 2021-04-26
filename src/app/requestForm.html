@@ -183,10 +183,10 @@ Select a title to set on the current HTML document:
     <form [formGroup]="stabilityInfoFormGroup">
       <ng-template matStepLabel >Sample Stability<br />Information</ng-template>
       <div class="mat-form-field-20" *ngFor="let condition of stabilityInfoFormGroups; let i = index">
-        <mat-form-field matInput appearance="standard" formControlName="stabilityCondition">
+        <mat-form-field appearance="standard">
           <mat-label>Select Submission Condition</mat-label>
-          <!--<input matInput formControlName="stabilityCondition2">-->
-          <mat-select matInput placeholder="Select">
+          <input matInput placeholder="Select" appearance="standard" formControlName="stabilityCondition">
+          <mat-select>
             <mat-option value="Ambient">Ambient (RT)</mat-option>
             <mat-option value="Refrigerated">Refrigerated (4°C)</mat-option>
             <mat-option value="Frozen -20">Frozen (-20°C)</mat-option>
@@ -195,7 +195,7 @@ Select a title to set on the current HTML document:
         </mat-form-field>
         <mat-form-field appearance="standard" formControlName="stabilityValue">
         <mat-label></mat-label>
-        <input matInput placeholder="Numeric Value" formControlName="stabilityValue2">
+        <input matInput placeholder="Numeric Value" formControlName="stabilityValue">
       </mat-form-field>
       <mat-form-field appearance="standard"  formControlName="stabilityPeriod">
         <mat-label>Select Time Period</mat-label>
