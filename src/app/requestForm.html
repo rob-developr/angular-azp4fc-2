@@ -111,10 +111,10 @@ Select a title to set on the current HTML document:
       </mat-checkbox>
       <div>
      <ul>
-      <li *ngFor="let subtask of task.subtasks"> <!-- Problem HERE-->
+      <!--<li *ngFor="let subtask of task.subtasks"> Problem HERE
                 <mat-checkbox class="example-margin"  [(ngModel)]="subtask.completed" [color]="subtask.color" (ngModelChange)="updateAllComplete()">{{subtask.name}}
                 </mat-checkbox>
-      </li>
+      </li>-->
       </ul> 
       </div>
       <div>
@@ -165,6 +165,7 @@ Select a title to set on the current HTML document:
         </mat-select>
         <mat-hint align="end">Select Period of Stability</mat-hint>
       </mat-form-field>
+      <button mat-raised-button #addCondition class="addCondition" >Add Condition</button>
       </div>
       <div>
         <button mat-raised-button color="secondary" matStepperPrevious>Back</button>&nbsp;

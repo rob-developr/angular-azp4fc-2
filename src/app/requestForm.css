@@ -22,6 +22,10 @@
   margin: 5px 0;
 }
 
+.addCondition{
+    margin-left:10px;
+}
+
 .example-form {
   min-width: 150px;
   max-width: 500px;
