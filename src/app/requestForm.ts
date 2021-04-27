@@ -23,13 +23,13 @@ export class requestForm implements OnInit {
   isLinear = false;
   testNameFormGroup: FormGroup;
   labInfoFormGroup: FormGroup;
+  contactFormGroup: FormGroup;
   testInfoFormGroup: FormGroup;
   collectionInfoFormGroup: FormGroup;
   stabilityInfoFormGroup: FormGroup;
   reportInfoFormGroup: FormGroup;
   refRangeFormGroup: FormGroup;
   attachmentsFormGroup: FormGroup;
-  reviewFormGroup: FormGroup;
   submitFormGroup: FormGroup;
 
   constructor(private _formBuilder: FormBuilder) {
@@ -66,6 +66,9 @@ task: Task = {
     });
     this.labInfoFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
+    });
+    this.contactFormGroup = this._formBuilder.group({
+      contactCtrl: ['', Validators.required]
     });
     this.testInfoFormGroup = this._formBuilder.group({
       thirdCtrl: ['', Validators.required],

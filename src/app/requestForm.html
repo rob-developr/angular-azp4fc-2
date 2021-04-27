@@ -63,10 +63,7 @@ Select a title to set on the current HTML document:
   <!-- Tab2. Lab Information -->
   <mat-step [stepControl]="labInfoFormGroup">
     <form [formGroup]="labInfoFormGroup">
-      <ng-template matStepLabel
-        >Laboratory Information /<br />
-        Contact Information</ng-template
-      >
+      <ng-template matStepLabel>Laboratory<br>Details</ng-template>
       <mat-form-field class="example-full-width">
         <mat-label>Testing Laboratory Name</mat-label>
         <input
@@ -125,7 +122,20 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <!-- Tab3. Analysis Information -->
+  <!-- Tab3. Lab Contact Information -->
+  <mat-step [stepControl]="contactFormGroup">
+    <form [formGroup]="contactFormGroup">
+      <ng-template matStepLabel>Contact<br>Details</ng-template>
+      <div>
+        <button mat-raised-button color="secondary" matStepperPrevious>
+          Back</button
+        >&nbsp;
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- Tab4. Analysis Information -->
   <mat-step [stepControl]="testInfoFormGroup">
     <form [formGroup]="testInfoFormGroup">
       <ng-template matStepLabel>Analysis<br />Information</ng-template>
@@ -165,7 +175,7 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <!-- Tab4. Collection Information -->
+  <!-- Tab5. Collection Information -->
   <mat-step [stepControl]="collectionInfoFormGroup">
     <form [formGroup]="collectionInfoFormGroup">
       <ng-template matStepLabel>Collection<br />Information</ng-template>
@@ -178,7 +188,7 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <!-- Tab5. Sample Stability Information -->
+  <!-- Tab6. Sample Stability Information -->
   <mat-step [stepControl]="stabilityInfoFormGroup">
     <form [formGroup]="stabilityInfoFormGroup">
       <ng-template matStepLabel >Sample Stability<br />Information</ng-template>
@@ -221,7 +231,7 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <!-- Tab5. Reporting Information -->
+  <!-- Tab7. Reporting Information -->
   <mat-step [stepControl]="reportInfoFormGroup">
     <form [formGroup]="reportInfoFormGroup">
       <ng-template matStepLabel>Reporting<br />Information</ng-template>
@@ -235,7 +245,7 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <!-- Tab6. Reference Ranges -->
+  <!-- Tab8. Reference Ranges -->
   <mat-step [stepControl]="refRangeFormGroup" optional>
     <form [formGroup]="refRangeFormGroup">
       <ng-template matStepLabel>Reference Ranges</ng-template>
@@ -249,7 +259,7 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <!-- Tab7. Attachments -->
+  <!-- Tab9. Attachments -->
   <mat-step [stepControl]="attachmentsFormGroup">
     <form [formGroup]="attachmentsFormGroup">
       <ng-template matStepLabel
@@ -265,24 +275,10 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <!-- Tab8. Reviews -->
-  <mat-step [stepControl]="reviewFormGroup">
-    <form [formGroup]="reviewFormGroup">
-      <ng-template matStepLabel>Review</ng-template>
-
-      <div>
-        <button mat-raised-button color="secondary" matStepperPrevious>
-          Back</button
-        >&nbsp;
-        <button mat-raised-button color="primary" matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-
-  <!-- Tab9. Save/Submit -->
+  <!-- Tab10. Save/Review/Submit -->
   <mat-step [stepControl]="submitFormGroup">
     <form [formGroup]="submitFormGroup">
-      <ng-template matStepLabel>Save or Submit</ng-template>
+      <ng-template matStepLabel>Save,<br>Review & Submit</ng-template>
       <mat-slide-toggle isChecked="false" required [(ngModel)]="acceptTCs"
         >Accept Terms of Service</mat-slide-toggle
       >
