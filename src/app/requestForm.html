@@ -100,16 +100,14 @@ Select a title to set on the current HTML document:
           <td>
             <mat-form-field class="example-full-width">
               <mat-label>Postal Code or ZIP</mat-label>
-              <input
-                matInput
-                #postalCode
-                maxlength="10"
-                placeholder="Ex. 20001"
-                value="2000"
-              />
+              <input matInput #postalCode maxlength="10" placeholder="Ex. 2001">
               <!--<mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>-->
             </mat-form-field>
           </td>
+          <mat-form-field class="example-full-width">
+              <mat-label>Country</mat-label>
+              <input matInput placeholder="Ex. Australia" />
+          </mat-form-field>
         </tr>
       </table>
 
@@ -262,8 +260,7 @@ Select a title to set on the current HTML document:
   <!-- Tab9. Attachments -->
   <mat-step [stepControl]="attachmentsFormGroup">
     <form [formGroup]="attachmentsFormGroup">
-      <ng-template matStepLabel
-        >Reference Material / Notes &<br />Attachments</ng-template
+      <ng-template matStepLabel>Reference Material,<br>Notes & Attachments</ng-template
       >
 
       <div>
