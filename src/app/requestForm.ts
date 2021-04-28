@@ -59,6 +59,7 @@ task: Task = {
   };
 
   allComplete: boolean = false;
+  tmp : boolean = false;
 
   ngOnInit() {
     this.testNameFormGroup = this._formBuilder.group({

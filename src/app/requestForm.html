@@ -66,14 +66,8 @@ Select a title to set on the current HTML document:
       <ng-template matStepLabel>Laboratory<br>Details</ng-template>
       <mat-form-field class="example-full-width">
         <mat-label>Testing Laboratory Name</mat-label>
-        <input
-          matInput
-          formControlName="secondCtrl"
-          placeholder="Laboratory Name"
-          required
-        />
+        <input matInput formControlName="secondCtrl" placeholder="Laboratory Name" required>
       </mat-form-field>
-
       <mat-form-field class="example-full-width">
         <mat-label>Address 1</mat-label>
         <textarea matInput placeholder="Ex. 100 Main St"></textarea>
@@ -190,8 +184,11 @@ Select a title to set on the current HTML document:
   <mat-step [stepControl]="stabilityInfoFormGroup">
     <form [formGroup]="stabilityInfoFormGroup">
       <ng-template matStepLabel >Sample Stability<br />Information</ng-template>
-      <div class="mat-form-field-20" *ngFor="let condition of stabilityInfoFormGroups; let i = index">
-        <mat-form-field appearance="standard">
+      <div *ngFor="let condition of stabilityInfoFormGroups; let i = index" class="cb-wrapper" [ngClass]="{'cb-vertival': !tmp }">
+      <table>
+        <tr>
+        <td>
+        <mat-form-field appearance="standard"  formControlName="stabilityCondition">
           <mat-label>Select Submission Condition</mat-label>
           <input matInput placeholder="Select" appearance="standard" formControlName="stabilityCondition">
           <mat-select>
@@ -201,13 +198,17 @@ Select a title to set on the current HTML document:
             <mat-option value="Frozen -70/-80">Frozen (-70/-80°C)</mat-option>
           </mat-select>
         </mat-form-field>
-        <mat-form-field appearance="standard" formControlName="stabilityValue">
-        <mat-label></mat-label>
-        <input matInput placeholder="Numeric Value" formControlName="stabilityValue">
+        </td>
+        <td>
+        <mat-form-field appearance="standard">
+        <mat-label>Value</mat-label>
+        <input matInput placeholder="Numeric Value" appearance="standard" formControlName="stabilityValue">
       </mat-form-field>
+      </td>
+      <td>
       <mat-form-field appearance="standard"  formControlName="stabilityPeriod">
         <mat-label>Select Time Period</mat-label>
-        <input matInput formControlName="stabilityPeriod2">
+        <input matInput appearance="standard" formControlName="stabilityPeriod2">
         <mat-select>
           <mat-option value="hours">Hours</mat-option>
           <mat-option value="days">Days</mat-option>
@@ -218,9 +219,14 @@ Select a title to set on the current HTML document:
         </mat-select>
         <mat-hint align="end">Select Period of Stability</mat-hint>
       </mat-form-field>
+      </td>
+      </tr>
+      </table>
       </div>
-      <button mat-raised-button #addCondition class="addCondition" (click)="onAddCondition()">Add Condition</button>
       <div>
+      <button mat-raised-button #addCondition class="addCondition" (click)="onAddCondition()">Add Condition</button>
+      </div>
+        <div>
         <button mat-raised-button color="secondary" matStepperPrevious>
           Back</button
         >&nbsp;

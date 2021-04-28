@@ -3,23 +3,24 @@
 }
 
 .mat-form-field {
-  margin-top:8px;
+  margin-top:12px;
   width: 80%;
 }
 
 .mat-form-field-20 .mat-form-field + .mat-form-field {
-  margin-left: 8px;
+  margin-left: 12px;
 }
 .mat-form-field-20 .mat-form-field {
   width: 300px;
 }
 
 .mat-form-field-20 form {
+  margin-top: 12px;
   margin-bottom: 20px;
 }
 
 .mat-form-field-20 form > * {
-  margin: 5px 0;
+  margin: 12px 0;
 }
 
 .addCondition{
@@ -33,8 +34,10 @@
   width: 80%;
 }
 
-.example-full-width {
+:host ::ng-deep .example-full-width {
+  align-items: center;
   width: 80%;
+  height: 48px;
 }
 
 td {
@@ -48,8 +51,23 @@ td {
 .example-margin {
   margin: 0 12px;
 }
-
+*/
 ul {
   list-style-type: none;
   margin-top: 4px;
+}
+
+.cb-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  flex-flow: row;
+}
+
+.mat-checkbox {
+  margin-left:20px;
+} 
+
+.cb-vertival {
+  flex-flow: column;
 }
