@@ -3,44 +3,27 @@
 }
 
 .mat-form-field {
-  margin-top:12px;
-  align-items: bottom;
-  width: 80%;
+    border: none;
 }
 
 .mat-form-field-20 .mat-form-field + .mat-form-field {
   margin-left: 12px;
-  align-items: flex-start;
 }
 .mat-form-field-20 .mat-form-field {
   width: 300px;
 }
 
 .mat-form-field-20 form {
-  margin-top: 12px;
+  margin-top: 0px;
   margin-bottom: 20px;
 }
 
 .mat-form-field-20 form > * {
-  margin: 12px 0;
-}
-
-.mat-select-placeholder{
-  font-size: 14px;
-}
-
-.mat-floating-placeholder{
-    top: -18px !important;
-  }
-
-.mat-select-trigger{
-  height: 2.4vh !important;
-  min-height: 23px !important;
-  margin-bottom: 18px;
+  margin: 0px 0;
 }
 
 .addCondition{
-    margin-left:10px;
+    margin-left:0px;
     margin-bottom:30px
 }
 
@@ -49,29 +32,16 @@
   max-width: 500px;
   width: 80%;
 }
-/**
-:host ::ng-deep .example-full-width {
-  align-self: center;
-  align-items: center;
-  width: 80%;
-}
 
-:host ::ng-deep .example-full-width-value {
-  padding-top: 30px;
-  height:90px;
-  width: 80%;
-}
-*/
-
-.stability-container .mat-form-field + .mat-form-field {
-  align-items: bottom;
-  margin-left: 8px;
+.stability-container .mat-form-field + .mat-form-field{
+margin-left: 8px;
 }
 
 .stability-container .mat-form-field {
-  align-items: bottom;
   width: 300px;
 }
+
+.mat-select-placeholder.mat-floating-placeholder {transform: scale(.75) translateY(7px) !important;}
 
 .example-full-width {
   width: 80%;
@@ -81,7 +51,6 @@
   height:90px;
   width: 80%;
 }
-*/
 
 
 td {
@@ -101,19 +70,4 @@ ul {
   margin-top: 4px;
 }
 
-/**
-.cb-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  flex-flow: row;
-}
-
-.mat-checkbox {
-  margin-left:20px;
-} 
-
-.cb-vertival {
-  flex-flow: column;
-}
-*/
+.mat-select-trigger { height: 48px; }

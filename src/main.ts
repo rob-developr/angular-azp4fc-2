@@ -28,7 +28,7 @@ import {requestForm} from './app/requestForm';
   declarations: [requestForm],
   bootstrap: [requestForm],
   providers: [
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } },
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
   ]
 })
 export class AppModule {}

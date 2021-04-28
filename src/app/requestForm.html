@@ -184,11 +184,11 @@ Select a title to set on the current HTML document:
   <mat-step [stepControl]="stabilityInfoFormGroup">
     <form [formGroup]="stabilityInfoFormGroup">
       <ng-template matStepLabel >Sample Stability<br>Information</ng-template>
-      <div *ngFor="let condition of stabilityInfoFormGroups; let i = index" class="stability-container">
-        <mat-form-field appearance="standard"  formControlName="stabilityCondition">
+      <div class="stability-container" *ngFor="let condition of stabilityInfoFormGroups; let i = index">
+        <mat-form-field appearance="fill"  formControlName="stabilityCondition">
           <mat-label>Select Submission Condition</mat-label>
-          <input matInput appearance="standard" formControlName="stabilityCondition">
-          <mat-select>
+          <input matInput formControlName="stabilityCondition">
+          <mat-select required>
             <mat-option>None</mat-option>
             <mat-option value="Ambient">Ambient (RT)</mat-option>
             <mat-option value="Refrigerated">Refrigerated (4°C)</mat-option>
@@ -196,14 +196,14 @@ Select a title to set on the current HTML document:
             <mat-option value="Frozen -70/-80">Frozen (-70/-80°C)</mat-option>
           </mat-select>
         </mat-form-field>
-        <mat-form-field appearance="standard" formControlName="stabilityValue">
-        <mat-label>Value</mat-label>
-        <input matInput appearance="standard" formControlName="stabilityValue">
+        <mat-form-field appearance="fill" formControlName="stabilityValue">
+         <mat-label>Value</mat-label>
+         <input matInput formControlName="stabilityValue">
       </mat-form-field>
-      <mat-form-field appearance="standard"  formControlName="stabilityPeriod">
+      <mat-form-field appearance="fill"  formControlName="stabilityPeriod">
         <mat-label>Select Time Period</mat-label>
-        <input matInput appearance="standard" formControlName="stabilityPeriod2">
-        <mat-select>
+        <input matInput formControlName="stabilityPeriod2">
+        <mat-select required>
           <mat-option>None</mat-option>
           <mat-option value="hours">Hours</mat-option>
           <mat-option value="days">Days</mat-option>
